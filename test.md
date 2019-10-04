@@ -1,10 +1,10 @@
 
-![](images/micronautas_4.png)
+![](http://castrolab.org/isme/images/micronautas_4.png)
 
 The Following is a Translation of a Course given at the *1st ISME (International Society for Microbial Ecology) Latin America Congress 2019*
 ==================================================================
 
-Análisis de datos bioinformáticos para metagenomas y amplicones usando R
+Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 ========================================================================
 
 ##### 9 y 10 de septiembre en la Universidad Técnica Federico Santa María, Valparaíso, Chile
