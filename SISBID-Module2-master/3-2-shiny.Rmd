@@ -1,0 +1,216 @@
+---
+title: "Shiny"
+author: "Matthew L Bendall"
+date: "July 10, 2015"
+output: html_document
+---
+
+```{r}
+# install.packages("shiny")
+library(shiny)
+
+ui <- fluidPage("Hello World")
+server <- function(input, output) {}
+
+runApp(shinyApp(ui, server))
+
+```
+
+## Simplest reactive
+
+```{r}
+library(shiny)
+
+ui <- fluidPage(
+  sliderInput("number", "Pick a number", 1, 10, value = 5),
+  p("You picked: ", textOutput("result", inline = TRUE))
+)
+
+server <- function(input, output, session) {
+  message("Initialising")
+  output$result <- renderText({
+    message("Updating")
+    input$number
+  })
+}
+
+runApp(shinyApp(ui, server))
+
+```
+
+
+```{r}
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("My App"),
+  sidebarLayout(
+    sidebarPanel("Often ", strong("controls"), " are placed in sidebar"),
+    mainPanel("Often ", strong("outputs"), " are placed in the main panel")
+  )
+)
+
+runApp(shinyApp(ui, function(input, output) {}))
+```
+
+## Inputs
+
+Define inputs with input function:
+textInput
+numericInput
+sliderInput
+
+```{r}
+ui <- fluidPage(
+  titlePanel("Who are you?"),
+  sidebarLayout(
+    sidebarPanel(textInput('name','What is your name?'),
+                 sliderInput('age','What is your age?',0,100,1),
+                 selectInput('gender','What is your gender?',c('Male','Female')),
+                 checkboxInput("like_r", "Do you like R?")
+                 ),
+    mainPanel("")
+  )
+)
+
+runApp(shinyApp(ui, function(input, output) {}))
+
+```
+
+
+1. Solve a specific problem
+2. Generalize by making a function
+3. Test function.
+4. Use function inside server.
+
+```{r}
+
+description <- function(name, age, gender, likes_r) {
+  paste0(name, " is a ", age, " year old ", ifelse(gender=='Male','man','woman'), " who ", ifelse(likes_r,"likes","doesn't like"), " R.")
+}
+
+description('Matthew',33,'Male',T)
+description('Michele',26,'Female',F)
+
+```
+
+```{r}
+ui <- fluidPage(
+  titlePanel("Who are you?"),
+  sidebarLayout(
+    sidebarPanel(textInput('name','What is your name?'),
+                 sliderInput('age','What is your age?',0,100,1),
+                 selectInput('gender','What is your gender?',c('Male','Female')),
+                 checkboxInput("like_r", "Do you like R?")
+                 ),
+    mainPanel(textOutput('description'))
+  )
+)
+
+server <- function(input, output) {
+  output$description <- renderText(
+    description(input$name,input$age,input$gender,input$like_r)
+  )
+}
+
+runApp(shinyApp(ui, server))
+
+```
+
+
+## Dice roller
+```{r}
+ui <- fluidPage(
+  titlePanel("Dice roller"),
+  sidebarLayout(
+    sidebarPanel(numericInput('num','How many dice would you like to roll?',10),
+                 selectInput('sides','How many sides?',seq(6,20), selected=6)
+                 ),
+    mainPanel(textOutput('rolls'))
+  )
+)
+roll_die <- function(num, sides) {
+  sample(as.integer(sides),num,replace=T)
+}
+
+server <- function(input,output){
+  output$rolls <- renderText(
+    paste(roll_die(input$num,input$sides))
+  )
+}
+
+runApp(shinyApp(ui, server))
+```
+
+
+## Dice roller 2
+```{r}
+  ui <- fluidPage(
+  titlePanel("Dice roller"),
+  sidebarLayout(
+    sidebarPanel(numericInput('num','How many dice would you like to roll?',10),
+                 selectInput('sides','How many sides?',seq(6,20), selected=6)
+                 ),
+    mainPanel(
+        textOutput("rolls"),
+        plotOutput("dist"),
+        tableOutput("summary")
+    )
+  )
+)
+roll_die <- function(num, sides) {
+  sample(sides, num, replace=T)
+}
+
+server4 <- function(input, output) {
+  rolls <- reactive({
+    roll_die(input$n, as.numeric(input$sides))
+  })
+  rolls_table <- reactive(table(rolls()))
+
+  output$rolls <- renderText(rolls())
+  output$dist <- renderPlot(plot(rolls_table()))
+  output$summary <- renderTable(rolls_table())
+}
+runApp(shinyApp(ui, server4))
+
+```
+
+
+```{r}
+library(shiny)
+library(ggvis)
+data("mpg", package = "ggplot2")
+
+ui <- fluidPage(
+  titlePanel("Smoothing"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("span", "", 0.25, 1, 1, step = 0.01),
+      radioButtons('model','Select model',c('lm','rlm'))
+    ),
+    mainPanel(
+      ggvisOutput("p")
+    )
+  )
+)
+# runApp(shinyApp(ui, function(input,output){}))
+draw_plot <- function(model) {
+  mpg %>%
+    ggvis(~displ, ~hwy) %>%
+    layer_points() %>%
+    layer_model_predictions(model = model)
+}
+# draw_plot(0.2)
+
+server <- function(input, output) {
+  draw_plot(reactive(input$model)) %>%
+    bind_shiny("p")
+}
+runApp(shinyApp(ui, server))
+
+
+
+
+
+```

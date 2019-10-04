@@ -1,0 +1,239 @@
+---
+title: "Notes: Day 1"
+author: "Matthew L Bendall"
+date: "July 8, 2015"
+output: html_document
+---
+
+## Introduction to `ggplot`
+
+##### What is a plot? 
+Mapping of data to things you can see
+
+##### Most important types of plots
+
+1. scatterplot
+2. histogram
+3. line plot
+
+
+str() gives the structure of an R object
+
+```{r}
+setwd("~/Projects/UW_institute/SISG8")
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+
+# Minor fixes for the included data
+weather <- read_csv("Module2/weather.csv", col_types = list(
+  date = col_datetime("%Y-%m-%d %H:%M:%S"),
+  precip = col_double(),
+  visib = col_double()
+)) %>% mutate(
+  temp = (temp - 32) * 5 / 9,
+  dewp = (dewp - 32) * 5 / 9
+)
+
+# A data frame has named columns, each column is the same length
+weather
+str(weather)
+View(weather)
+
+# Introduction to data frames --------------------------------------------------
+
+daily <- filter(weather, hour == 12)
+jfk <- filter(weather, origin == "JFK")
+```
+
+### Basic graphics
+---------------------------------------------------------------
+
+What is a plot? Mapping between variables and aesthietcs.
+Three most useful graphics are:
+ scatterplot, histogram & line chart
+
+```{r}
+ggplot(daily, aes(temp, humid)) +
+  geom_point()
+```
+
+`aes()` is the aestetic mapping. First two arguments are x and y, respectively.
+
+```{r}
+ggplot(daily, aes(wind_speed)) +
+  geom_histogram()
+```
+
+Only one variable for histogram
+
+```{r}
+ggplot(jfk, aes(date, temp)) +
+  geom_line()
+```
+
+### Scatterplots
+
+```{r}
+# Scatterplots ------------------------------------------------------------
+
+ggplot(daily, aes(temp, humid)) + geom_point()
+# Add extra properties with shape or colour
+ggplot(daily, aes(temp, humid, shape = origin)) +
+  geom_point()
+ggplot(daily, aes(temp, humid, colour = origin)) +
+  geom_point()
+
+# Discrete data
+ggplot(daily, aes(wind_dir, wind_speed)) +
+  geom_point()
+ggplot(daily, aes(wind_dir, wind_speed)) +
+  geom_jitter()
+# And in the dev version
+# ggplot(daily, aes(wind_dir, wind_speed)) +
+#   geom_count()
+```
+
+Plot in polar coordinates for wind_dir
+```{r}
+ggplot(daily, aes(wind_dir, wind_speed)) +
+  geom_point() + geom_jitter() + coord_polar()
+
+```
+
+```{r}
+# Line charts ------------------------------------------------------------------
+
+# Useful when you have a time series
+ggplot(daily, aes(date, temp)) +
+  geom_point()
+ggplot(daily, aes(date, temp)) +
+  geom_line()
+ggplot(daily, aes(date, temp, group = origin)) +
+  geom_line()
+ggplot(daily, aes(date, temp, colour = origin)) +
+  geom_line()
+
+```
+
+
+```{r}
+# Alternative to aesthetics is to use _facetting_
+ggplot(daily, aes(date, temp)) +
+  geom_line() +
+  facet_wrap(~origin)
+```
+
+```{r}
+ggplot(jfk, aes(hour, temp)) +
+  geom_line()
+
+ggplot(jfk, aes(hour, temp)) +
+  geom_line(aes(group = interaction(month,day)))
+```
+
+How does humidity vary within a day?
+How does it vary across days?
+
+```{r}
+ggplot(jfk, aes(hour,humid)) +
+  geom_line()
+
+jfk$yday <- lubridate::yday(jfk$date)
+
+ggplot(jfk, aes(hour, humid)) +
+  geom_line(aes(group=yday)) +
+  facet_wrap(~month)
+
+ggplot(jfk, aes(hour, temp)) +
+  geom_line(aes(group=yday)) +
+  facet_wrap(~month)
+
+ggplot(jfk, aes(hour, humid)) +
+  stat_summary(fun.ymin=min, fin.ymax=max, geom="ribbon") + 
+  facet_wrap(~month)
+
+
+
+```
+
+### Histograms
+
+Experiment with the binwidth
+```{r}
+# Histograms -------------------------------------------------------------------
+
+ggplot(daily, aes(wind_speed)) + geom_histogram()
+ggplot(daily, aes(wind_speed)) + geom_histogram(binwidth = 1)
+
+ggplot(daily, aes(wind_dir)) +
+  geom_histogram(binwidth = 10)
+
+ggplot(daily, aes(precip)) + geom_histogram()
+ggplot(daily, aes(precip)) +
+  geom_histogram(binwidth = 0.01)
+# ALWAYS EXPERIMENT WITH THE BIN WIDTH!
+```
+
+Similar visualizations
+```{r}
+ggplot(daily, aes(wind_speed)) + geom_density()
+ggplot(daily, aes(wind_speed)) + geom_freqpoly(binwidth=1)
+```
+
+```{r}
+ggplot(filter(weather, precip > 0), aes(precip)) + 
+  geom_histogram(binwidth = 0.01)
+
+```
+
+
+```{r}
+
+resolution(daily$)
+
+```
+
+
+## Layering visualizations for big data
+
+
+Five ways to inspect data set
+
+Every layer must have a dataset and aesthetic mappings
+
+geom = geometric object
+stat = statistical transformation
+
+## How to improve this plot
+```{r}
+ggplot(diamonds, aes(carat, price)) +
+  geom_point()
+
+```
+
+### Joint distribution
+bin (2d); map color to count [heatmap]
+density (2d); draw the contours
+hex bin
+
+### Conditional distribution
+histogram
+boxplots
+violin plot
+
+### Simple ideas
+make points smaller
+make points hollow
+make points transparent
+
+
+mod <- lm(log10(price)-log10(carat), data=diamonds)
+diamonds$resid <- resid(mod)
+
+ggplot(diamonds, aes(log10(carat), log10(price))) +
+  geom_point(aes(colo)) +
+  geom_smooth(method = "lm")
+

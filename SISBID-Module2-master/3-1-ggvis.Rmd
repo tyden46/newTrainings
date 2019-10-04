@@ -1,0 +1,253 @@
+---
+title: "Intro to ggvis"
+author: "Matthew L Bendall"
+date: "July 10, 2015"
+output: html_document
+---
+
+```{r}
+rm(list=ls())
+library(ggvis)
+data("mpg", package = "ggplot2")
+data("economics", package = "ggplot2")
+```
+
+### Basic plots
+
+```{r}
+ggvis(mpg, x = ~displ, y = ~hwy)
+ggvis(mpg, ~displ, ~hwy)
+```
+
+### Other plot types
+```{r}
+# Single continuous variable
+ggvis(mpg, ~displ)
+# Two continuous variable
+ggvis(mpg, ~displ, ~hwy)
+# Date and continuous
+ggvis(economics, ~date, ~psavert)
+# Factor
+ggvis(mpg, ~drv)
+# Factor and continuous
+ggvis(mpg, ~drv, ~hwy)
+```
+
+### Other visual properties
+```{r}
+ggvis(mpg, ~displ, ~hwy, fill = ~class)
+ggvis(mpg, ~displ, ~hwy, shape = ~drv)
+ggvis(mpg, ~displ, ~hwy, size = ~cty)
+ggvis(mpg, ~displ, ~hwy, fill = ~class, shape = ~drv)
+
+```
+
+### Piping
+ggvis uses a functional interface - call functions to modify plot
+```{r}
+
+layer_smooths(
+  layer_points(
+    ggvis(mpg, ~displ, ~hwy)
+  )
+)
+
+# Same as
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths()
+
+# Change parameters for layer_smooths to get smoother curve or standard error
+mpg %>% ggvis(~displ,~hwy) %>% layer_points() %>% layer_smooths(se=T, span=1)
+
+```
+
+#### Use dplyr to manipulate data and pipe into ggvis
+
+```{r}
+
+library(dplyr)
+
+mpg %>%
+  filter(year == 1999) %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths()
+
+mpg %>%
+  group_by(cyl) %>%
+  ggvis(~hwy) %>%
+  layer_histograms(fill = ~cyl)
+
+mpg %>%
+  group_by(cyl) %>%
+  ggvis(~hwy) %>%
+  layer_freqpolys(stroke = ~cyl, width = 2)
+```
+
+# Cocaine
+
+Read cocaine. Use visualizations to explore the major determinants of cost of cocaine in the US
+
+```{r}
+cocaine %>%
+  group_by(state) %>%
+  ggvis(~potency, ~price)
+
+cocaine %>%
+  mutate(perg=log(price)/weight) %>%
+  ggvis(~potency, perg)
+
+```
+
+
+```{r}
+ggvis(cocaine, ~weight, ~price) %>%
+  layer_points() %>%
+  layer_smooths(stroke = "red")
+
+cocaine %>%
+  ggvis(~potency, ~price) %>%
+  layer_points()
+
+cocaine %>%
+  filter(weight <= 250) %>%
+  ggvis(~weight, ~potency) %>%
+  layer_points() %>%
+  layer_smooths(stroke = "red")
+
+ggvis(cocaine, ~weight, ~price) %>%
+  layer_points()
+
+ggvis(cocaine, ~weight, ~price) %>%
+  layer_points() %>%
+  layer_model_predictions(model="lm")
+
+```
+
+
+### Scaling
+
+```{r}
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points(fill = "red")
+
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_model_predictions(model = "lm",
+    stroke = "lm") %>%
+  layer_smooths(stroke = "loess")
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points(fill := "red")
+
+
+# Sometimes the data is already scaled
+df <- data.frame(
+  x = 1:3,
+  y = 1:3,
+  col = c("red", "green", "blue")
+)
+
+ggvis(df, ~x, ~y, fill = ~col)
+ggvis(df, ~x, ~y, fill := ~col)
+```
+
+
+```{r}
+
+# Variables ---------------------------------------------------------------
+
+df <- data.frame(
+  x = 1:3,
+  y = 1:3
+)
+
+xvar <- ~x
+yvar <- ~y
+ggvis(df, xvar, yvar)
+
+# https://github.com/rstudio/ggvis/issues/416
+xvar <- quote(x)
+yvar <- quote(y)
+ggvis(df, xvar, yvar)
+
+var <- "x"
+eval(substitute(~ x, list(x = as.name(var))))
+# See
+# http://adv-r.had.co.nz/Computing-on-the-language.html
+# http://adv-r.had.co.nz/Expressions.html
+
+```
+
+## Interaction
+
+```{r}
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths(
+    span = input_slider(0.2, 1)
+  )
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths(
+    stroke := input_select(c('red','orange','yellow','green','blue'))
+  )
+
+mpg %>%
+  ggvis(~hwy) %>% layer_densities(adjust=input_slider(0.0,2.5))
+  layer_points() %>%
+  layer_smooths(stroke := input_select(c('red','orange','yellow','green','blue')))
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths(stroke := input_select(c("red", "green", "blue")))
+
+mpg %>%
+  ggvis(~displ) %>%
+  layer_densities(adjust = input_slider(0.1, 5))
+```
+
+# Mapping variables -------------------------------------------------------
+```{r}
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points(fill = input_select(names(mpg)))
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points(fill = input_select(names(mpg), map = as.name))
+```
+
+
+# Other interactives ------------------------------------------------------
+
+```{r}
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths(span = waggle(0.2, 1))
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points() %>%
+  layer_smooths(span = up_down(0.2, 1))
+
+mpg %>%
+  ggvis(~displ, ~hwy) %>%
+  layer_points(
+    size := left_right(50, 1000),
+    opacity := up_down(0, 1)
+  )
+
