@@ -8,7 +8,7 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 ========================================================================
 
 
-![](/bacteria2.png) Units
+![](bacteria2.png) Units
 ----------------------------------
 
 ##### The course has six units. Each unit is designed to help you learn and practice a different analysis skill of amplicon or metagenome sequencing data using the R software/programming language. If you have no experience working in R, we recommend you start with unit 1: " Introduction to R: Data manipulation and visualization ".
