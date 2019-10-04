@@ -14,21 +14,21 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 ##### The course has six units. Each unit is designed to help you learn and practice a different analysis skill of amplicon or metagenome sequencing data using the R software/programming language. If you have no experience working in R, we recommend you start with unit 1: " Introduction to R: Data manipulation and visualization ".
 ##### Please review the list of available units below and click on the one you want to practice to go to the tutorial.
 
-### ![](images/one.png) [Introducción a R: Manipulación de datos y visualización](http://www.castrolab.org/isme/introR/introR.html) ![](images/r.png)
+### ![](one.png) [Introducción a R: Manipulación de datos y visualización](http://www.castrolab.org/isme/introR/introR.html) ![](r.png)
 
-### ![](images/two.png) [Análisis de secuencias de 16S con DADA2](http://www.castrolab.org/isme/dada2/dada2.html) ![](images/bioinformatics.png)
+### ![](two.png) [Análisis de secuencias de 16S con DADA2](http://www.castrolab.org/isme/dada2/dada2.html) ![](bioinformatics.png)
 
-### ![](images/three.png) [Introducción a phyloseq y a análisis de diversidad](http://www.castrolab.org/isme/biodiversity/biodiversity.html) ![](images/bacteria.png)
+### ![](three.png) [Introducción a phyloseq y a análisis de diversidad](http://www.castrolab.org/isme/biodiversity/biodiversity.html) ![](bacteria.png)
 
-### ![](images/four.png) [Búsqueda de genes de interés en datos de metagenómica _shotgun_](http://www.castrolab.org/isme/gene_search/gene_search.html) ![](images/gene_search.png)
+### ![](four.png) [Búsqueda de genes de interés en datos de metagenómica _shotgun_](http://www.castrolab.org/isme/gene_search/gene_search.html) ![](gene_search.png)
 
-### ![](images/five.png) [Visualización y curación de genomas ensamblados desde metagenomas (MAGs)](http://www.castrolab.org/isme/mags/mags.html) ![](images/genome.png)
+### ![](five.png) [Visualización y curación de genomas ensamblados desde metagenomas (MAGs)](http://www.castrolab.org/isme/mags/mags.html) ![](genome.png)
 
-### ![](images/six.png) [Redes de co-ocurrencia de microorganismos](http://www.castrolab.org/isme/microbial_networks/microbial_networks.html) ![](images/network.png)
+### ![](six.png) [Redes de co-ocurrencia de microorganismos](http://www.castrolab.org/isme/microbial_networks/microbial_networks.html) ![](network.png)
 
 ##### Nota: Para los días del curso suponemos que los participantes han instalado R y RStudio y los paquetes de R necesarios, siguiendo la guía de requerimientos enviada una semana antes. De lo contrario, puedes hacerlo siguiendo los pasos en el siguiente link:
 
-### ![](images/setup.png) [Antes de comenzar: Instalación de R, RStudio y paquetes](http://www.castrolab.org/isme/Requerimientos_WorkshopISME.html)
+### ![](setup.png) [Antes de comenzar: Instalación de R, RStudio y paquetes](http://www.castrolab.org/isme/Requerimientos_WorkshopISME.html)
 
   
 
@@ -37,4 +37,4 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 > 
 > **[CASTRO LAB](http://www.castrolab.org)**
 > 
-> ![](images/UNAB_CBIB_horizontal.png)
+> ![](UNAB_CBIB_horizontal.png)
