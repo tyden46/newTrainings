@@ -1,7 +1,7 @@
 
 ![](images/micronautas_4.png)
 
-The Following is a Translation of a Course given at the 1st ISME (International Society for Microbial Ecology) Latin America Congress 2019
+The Following is a Translation of a Course given at the *1st ISME (International Society for Microbial Ecology) Latin America Congress 2019*
 ==================================================================
 
 Análisis de datos bioinformáticos para metagenomas y amplicones usando R
