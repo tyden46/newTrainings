@@ -8,14 +8,11 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 ========================================================================
 
 
-##### [isme-la2019.org](https://isme-la2019.org)
-
-![](images/bacteria2.png) Unidades
+![](/bacteria2.png) Units
 ----------------------------------
 
-##### El curso cuenta con seis unidades, cada una un el objetivo de conocer y practicar una habilidad de análisis diferente de datos de secuenciación de amplicones o metagenomas usando el software R. Sino tienes experiencia trabajando en R, te recomendamos comenzar con la unidad 1: "Introducción a R: Manipulación de datos y visualización".
-
-##### Por favor, revisa la lista de unidades disponibles a continuación y haz clic sobre la que quieras practicar para dirigirte al tutorial.
+##### The course has six units. Each unit is designed to help you learn and practice a different analysis skill of amplicon or metagenome sequencing data using the R software/programming language. If you have no experience working in R, we recommend you start with unit 1: " Introduction to R: Data manipulation and visualization ".
+##### Please review the list of available units below and click on the one you want to practice to go to the tutorial.
 
 ### ![](images/one.png) [Introducción a R: Manipulación de datos y visualización](http://www.castrolab.org/isme/introR/introR.html) ![](images/r.png)
 
