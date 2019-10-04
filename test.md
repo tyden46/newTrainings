@@ -1,5 +1,5 @@
 
-![](http://castrolab.org/isme/images/micronautas_4.png)
+![alt-text](http://castrolab.org/isme/images/micronautas_4.png "Logo")
 
 The Following is a Translation of a Course given at the *1st ISME (International Society for Microbial Ecology) Latin America Congress 2019*
 ==================================================================
