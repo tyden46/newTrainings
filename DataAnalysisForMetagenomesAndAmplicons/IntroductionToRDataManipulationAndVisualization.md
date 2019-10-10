@@ -100,23 +100,23 @@ unidad: **Introducción a R: Manipulación de datos y visualización**
 > 
 > [**Análisis de secuencias de 16S con
 > DADA2**](http://www.castrolab.org/isme/dada2/dada2.html)
-> ![](images/bioinformatics.png)
+> ![](bioinformatics.png)
 > 
 > [**Introducción a phyloseq y a análisis de
 > diversidad**](http://www.castrolab.org/isme/biodiversity/biodiversity.html)
-> ![](images/bacteria.png)
+> ![](bacteria.png)
 > 
 > [**Búsqueda de genes de interés en datos de metagenómica
 > *shotgun***](http://www.castrolab.org/isme/gene_search/gene_search.html)
-> ![](images/gene_search.png)
+> ![](gene_search.png)
 > 
 > [**Visualización y curación de genomas ensamblados desde metagenomas
 > (MAGs)**](http://www.castrolab.org/isme/mags/mags.html)
-> ![](images/genome.png)
+> ![](genome.png)
 > 
 > [**Redes de co-ocurrencia de
 > microorganismos**](http://www.castrolab.org/isme/microbial_networks/microbial_networks.html)
-> ![](images/network.png)
+> ![](network.png)
 
 -----
 
@@ -132,7 +132,7 @@ unidad: **Introducción a R: Manipulación de datos y visualización**
 [Centro de Bioinformática y Biología Integrativa](http://www.cbib.cl) |
 [Universidad Andrés Bello](https://www.unab.cl)
 
-![](images/UNAB_CBIB_horizontal.png)
+![](UNAB_CBIB_horizontal.png)
 
 [Santiago, Chile](https://goo.gl/maps/BCe9hWcRZJKkhaDP8)
 
@@ -209,7 +209,7 @@ continuación, RStudio se divide en 4 paneles principales:
     archivos, visualizar tus gráficos en tiempo real, administrar
     paquetes de R, y pedir ayuda.
 
-![RStudio](images/RStudio_overview.png) RStudio interfaz
+![RStudio](RStudio_overview.png) RStudio interfaz
 
 Básicamente, lo que haremos es escribir instrucciones (a lo que llamamos
 comandos) en el lenguaje de programación R, y luego le indicaremos al
@@ -2121,7 +2121,7 @@ ggsave("example_plot.pdf", plot, width = 14, height = 8, device = "pdf")
 
 -----
 
-![](images/back.png) [**Ir a la página de inicio del
+![](back.png) [**Ir a la página de inicio del
 curso**](http://castrolab.org/isme/bienvenida_WorkshopISME.html)
 
 </div>
