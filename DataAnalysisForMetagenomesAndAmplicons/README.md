@@ -28,13 +28,10 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 
 ##### Note: This course assumes that you have installed R, RStudio, and necessary R packages found [here](http://www.castrolab.org/isme/Requerimientos_WorkshopISME.html)
 :
-##### Nota: Para los días del curso suponemos que los participantes han instalado R y RStudio y los paquetes de R necesarios, siguiendo la guía de requerimientos enviada una semana antes. De lo contrario, puedes hacerlo siguiendo los pasos en el siguiente link:
-
-### ![](setup.png) [Antes de comenzar: Instalación de R, RStudio y paquetes]
   
 
-> **Este curso es diseñado e impartido por el grupo de Dr. Eduardo Castro-Nallar (eduardo.castro@unab.cl):  
-> Dr. Florence Gutzwiller (florence.gutzwiller@gmail.com) y M.Sc. Katterinne N. Mendez (mendez.katterinne@gmail.com)**
+> **This course was designed and distributed by Dr. Eduardo Castro-Nallar's group (eduardo.castro@unab.cl):  
+> Dr. Florence Gutzwiller (florence.gutzwiller@gmail.com) and M.Sc. Katterinne N. Mendez (mendez.katterinne@gmail.com)**
 > 
 > **[CASTRO LAB](http://www.castrolab.org)**
 > 
