@@ -32,6 +32,6 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 > **This course was designed and distributed by Dr. Eduardo Castro-Nallar's group (eduardo.castro@unab.cl):  
 > Dr. Florence Gutzwiller (florence.gutzwiller@gmail.com) and M.Sc. Katterinne N. Mendez (mendez.katterinne@gmail.com)**
 > 
-> **[CASTRO LAB](http://www.castrolab.org)**
+> **[CASTRO LAB Webpage](http://www.castrolab.org)**
 > 
 > ![](UNAB_CBIB_horizontal.png)
