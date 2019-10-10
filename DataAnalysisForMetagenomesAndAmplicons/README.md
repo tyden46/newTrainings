@@ -19,7 +19,7 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 
 ### ![](three.png) [Introduction to Phyloseq and to Diversity Analysis](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/Introducci%C3%B3n%20a%20phyloseq%20y%20a%20an%C3%A1lisis%20de%20diversidad.md) ![](bacteria.png)
 
-### ![](four.png) [Searching genes of interest in metagenomic shotgun data](http://www.castrolab.org/isme/gene_search/gene_search.html) ![](gene_search.png)
+### ![](four.png) [Searching genes of interest in metagenomic shotgun data](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/B%C3%BAsqueda%20de%20genes%20de%20inter%C3%A9s%20en%20datos%20de%20metagen%C3%B3mica%20shotgun.md) ![](gene_search.png)
 
 ### ![](five.png) [Genome Visualization and Curation of Metagenome-assembled Genomes (MAGs)](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/Introducci%C3%B3n%20a%20phyloseq%20y%20a%20an%C3%A1lisis%20de%20diversidad.md) ![](genome.png)
 
@@ -32,6 +32,6 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 > **This course was designed and distributed by Dr. Eduardo Castro-Nallar's group (eduardo.castro@unab.cl):  
 > Dr. Florence Gutzwiller (florence.gutzwiller@gmail.com) and M.Sc. Katterinne N. Mendez (mendez.katterinne@gmail.com)**
 > 
-> **[CASTRO LAB Webpage](http://www.castrolab.org)**
+> **[CASTRO LAB](http://www.castrolab.org)**
 > 
 > ![](UNAB_CBIB_horizontal.png)
