@@ -1246,6 +1246,8 @@ Mientras que, la función `facet_wrap()` organiza los gráficos en un número ar
 
 ![](introR_files/figure-html/boxplot3-1.png)
 
+# Organizar y exportar graficos
+
 3.8 Organizar y exportar gráficos
 ---------------------------------
 
