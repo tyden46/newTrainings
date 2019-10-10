@@ -89,7 +89,7 @@ datos bioinformáticos para metagenomas y amplicones usando R**. A
 realizarse el próximo 9 y 10 de septiembre en la [Universidad Técnica
 Federico Santa María](https://www.usm.cl), Valparaíso, Chile.
 
-![](images/back.png) [**Ir a la página de inicio del
+![](back.png) [**Ir a la página de inicio del
 curso**](http://castrolab.org/isme/bienvenida_WorkshopISME.html)
 
 El curso cuenta con **6 unidades**. Ahora, usted se encuentra en la
