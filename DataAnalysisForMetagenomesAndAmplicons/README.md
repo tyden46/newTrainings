@@ -14,7 +14,7 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 ##### The course has six units. Each unit is designed to help you learn and practice a different analysis skill of amplicon or metagenome sequencing data using the R software/programming language. If you have no experience working in R, we recommend you start with unit 1: " Introduction to R: Data manipulation and visualization ".
 ##### Please review the list of available units below and click on the one you want to practice to go to the tutorial.
 
-### ![](one.png) [Introduction to R: Data manipulation and visualization](http://www.castrolab.org/isme/introR/introR.html) ![](r.png)
+### ![](one.png) [Introduction to R: Data manipulation and visualization](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/IntroductionToRDataManipulationAndVisualization.md) ![](r.png)
 
 ### ![](two.png) [Sequence Analysis of 16 with DADA2](http://www.castrolab.org/isme/dada2/dada2.html) ![](bioinformatics.png)
 
