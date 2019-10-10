@@ -94,7 +94,7 @@ curso**](http://castrolab.org/isme/bienvenida_WorkshopISME.html)
 
 El curso cuenta con **6 unidades**. Ahora, usted se encuentra en la
 unidad: **Introducción a R: Manipulación de datos y visualización**
-![](images/r.png)
+![](r.png)
 
 > **Otras unidades del curso son**:
 > 
@@ -989,7 +989,7 @@ través de la opción `Install` en la pestaña `Packages` de **RStudio**:
     importarlo sólo debes identificarlo y seleccionarlo en la lista de
     paquetes.
 
-![install\_packages](images/InstallPackages_RStudio.png) Instalación de
+![install\_packages](InstallPackages_RStudio.png) Instalación de
 paquetes en RStudio
 
 `tidyverse` es un paquete que incluye la instalación varios paquetes
