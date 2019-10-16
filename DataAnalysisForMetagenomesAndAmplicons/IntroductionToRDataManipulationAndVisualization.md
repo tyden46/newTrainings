@@ -2,57 +2,49 @@
 
 <div class="book-summary">
 
-  - [Introducción a R](http://www.castrolab.org/isme/introR/introR.html)
+- [Introduction to R](http://www.castrolab.org/isme/introR/introR.html)
 
-  -   - [**0.1** Acerca del curso](#workshop)
+- - [**0.1** About the course](#workshop)
 
-  - [**1** Introducción a R](#introR)
-    
-      - [**1.1** ¿Por qué R?](#por-que-r)
-      - [**1.2** Conociendo RStudio](#conociendo-rstudio)
-      - [**1.3** Set de datos para
-        trabajar](#set-de-datos-para-trabajar)
-      - [**1.4** Extraer información de
-        tablas](#extraer-informacion-de-tablas)
-      - [**1.5** Factores](#factores)
-          - [**1.5.1** Transformar factores](#transformar-factores)
-          - [**1.5.2** Renombrar factores](#renombrar-factores)
-          - [**1.5.3** Argumento
-            `stringsAsFactors`](#argumento-stringsasfactors)
+- [**1** Introduction to R](#introR)
+  
+  - [**1.1** Why R?](#por-que-r)
+  - [**1.2** Getting to Know RStudio](#conociendo-rstudio)
+  - [**1.3** Data Set We'll Work With](#set-de-datos-para-trabajar)
+  - [**1.4** Getting Information from Tables](#extraer-informacion-de-tablas)
+  - [**1.5** Factors](#factores)
+    - [**1.5.1**Transforming Factors](#transformar-factores)
+    - [**1.5.2** Renaming factors](#renombrar-factores)
+    - [**1.5.3** Argument
+      `stringsAsFactors`](#argumento-stringsasfactors)
 
-  - [**2** Manipulación de datos en R](#manipulacion-de-datos-en-r)
-    
-      - [**2.1** Seleccionar columnas y filtrar
-        filas](#seleccionar-columnas-y-filtrar-filas)
-      - [**2.2** Funciones anidadas y
-        ***pipes***](#funciones-anidadas-y-pipes)
-      - [**2.3** ***Mutate***: crear nuevas columnas desde información
-        existente en otras
-        columnas](#mutate-crear-nuevas-columnas-desde-informacion-existente-en-otras-columnas)
-      - [**2.4** Dividir -\> aplicar -\>
-        combinar](#dividir---aplicar---combinar)
-      - [**2.5** Contar](#contar)
-      - [**2.6** Remodelar tablas usando `spread()` y
-        `gather()`](#remodelar-tablas-usando-spread-y-gather)
-      - [**2.7** Exportar datos](#exportar-datos)
+- [**2** Data Manipulation in R](#manipulacion-de-datos-en-r)
+  
+  - [**2.1** Selecting columns and riltering rows](#seleccionar-columnas-y-filtrar-filas)
+  - [**2.2** Nested Functions and
+    ***pipes***](#funciones-anidadas-y-pipes)
+  - [**2.3** ***Mutate***: creating new columns from existing information in other columns](#mutate-crear-nuevas-columnas-desde-informacion-existente-en-otras-columnas)
+  - [**2.4** Divide -\> apply -\>
+    combine](#dividir---aplicar---combinar)
+  - [**2.5** Count](#contar)
+  - [**2.6** Remodeling tables using `spread()` and
+    `gather()`](#remodelar-tablas-usando-spread-y-gather)
+  - [**2.7** Exporting data](#exportar-datos)
 
-  - [**3** Visualización de datos en R](#visualizacion-de-datos-en-r)
-    
-      - [**3.1** Graficar con `ggplot2`](#graficar-con-ggplot2)
-      - [**3.2** Construyendo gráficos
-        iterativamente](#construyendo-graficos-iterativamente)
-      - [**3.3** Boxplot](#boxplot)
-      - [**3.4** Graficar datos con series de
-        tiempo](#graficar-datos-con-series-de-tiempo)
-      - [**3.5** *Faceting*](#faceting)
-      - [**3.6** `ggplot2` *themes*](#ggplot2-themes)
-      - [**3.7** Personalización](#personalizacion)
-      - [**3.8** Organizar y exportar
-        gráficos](#organizar-y-exportar-graficos)
+- [**3** Data visualization in R](#visualizacion-de-datos-en-r)
+  
+  - [**3.1** Graphing with `ggplot2`](#graficar-con-ggplot2)
+  - [**3.2** Making figures step-by-step](#construyendo-graficos-iterativamente)
+  - [**3.3** Boxplot](#boxplot)
+  - [**3.4** Graphing with time data](#graficar-datos-con-series-de-tiempo)
+  - [**3.5** *Faceting*](#faceting)
+  - [**3.6** `ggplot2` *themes*](#ggplot2-themes)
+  - [**3.7** Personalization](#personalizacion)
+  - [**3.8** Organizing and exporting figures](#organizar-y-exportar-graficos)
 
-  -   - [CASTRO LAB](http://www.castrolab.org)
+- - [CASTRO LAB](http://www.castrolab.org)
 
-  - [ISME LA 2019](https://isme-la2019.org)
+- [ISME LA 2019](https://isme-la2019.org)
 
 </div>
 
@@ -120,12 +112,12 @@ unidad: **Introducción a R: Manipulación de datos y visualización**
 
 -----
 
-  - Profesor: **Dr. Eduardo Castro-Nallar** (<eduardo.castro@unab.cl>)
+- Profesor: **Dr. Eduardo Castro-Nallar** (<eduardo.castro@unab.cl>)
 
-  - Ayudantes:
-    
-      - **Dr. Florence Gutzwiller** (<florence.gutzwiller@gmail.com>)
-      - **M.Sc. Katterinne N. Mendez** (<mendez.katterinne@gmail.com>)
+- Ayudantes:
+  
+  - **Dr. Florence Gutzwiller** (<florence.gutzwiller@gmail.com>)
+  - **M.Sc. Katterinne N. Mendez** (<mendez.katterinne@gmail.com>)
 
 **[CASTRO LAB](http://www.castrolab.org)**
 
@@ -149,33 +141,33 @@ unidad: **Introducción a R: Manipulación de datos y visualización**
 Tus análisis serán una serie de **comandos** escritos (R *script*), lo
 que es muy conveniente porque:
 
-  - Conlleva a tener el control y completo entendimiento de qué estás
-    haciendo (**adiós a la caja negra** en tus análisis *in silico*).
-  - ¡**Reproducibilidad**\! Si necesitas repetir el análisis, agregar
-    más datos o corregir un error, sólo necesitas correr tu *script*
-    nuevamente y tus tests estadísticos y gráficos se actualizarán
-    automáticamente.
-  - Tus análisis son claros y transparentes, cualquier colega o tú en el
-    futuro pueden leerlo para encontrar errores y/o hacer mejoras.
-  - Puedes **comentar tu *script***. Agregar comentarios, explicaciones
-    o relatos en tu código facilitará entender, paso a paso, el por qué
-    de tus análisis a tus colegas, e incluso a ti mísmo en el futuro.
+- Conlleva a tener el control y completo entendimiento de qué estás
+  haciendo (**adiós a la caja negra** en tus análisis *in silico*).
+- ¡**Reproducibilidad**\! Si necesitas repetir el análisis, agregar
+  más datos o corregir un error, sólo necesitas correr tu *script*
+  nuevamente y tus tests estadísticos y gráficos se actualizarán
+  automáticamente.
+- Tus análisis son claros y transparentes, cualquier colega o tú en el
+  futuro pueden leerlo para encontrar errores y/o hacer mejoras.
+- Puedes **comentar tu *script***. Agregar comentarios, explicaciones
+  o relatos en tu código facilitará entender, paso a paso, el por qué
+  de tus análisis a tus colegas, e incluso a ti mísmo en el futuro.
 
 Otras importantes ventajas de usar R son:
 
-  - ¡**Escalabilidad**\! R está diseñado para el análisis de datos. Las
-    habilidades que vayas aprendiendo en R se pueden escalar fácilmente
-    con el tamaño de tus datos (set de datos con cientos a miles,
-    incluso millones de líneas).
-  - ¡**Gráficos de alta calidad**\! R tiene innumerables funcionalidades
-    para todo tipo de gráficas a tu disposición para lograr una efectiva
-    visualización de tus resultados. Visita **[The R Graph
-    Gallery](http://www.r-graph-gallery.com/all-graphs/)** para ver
-    ejemplos de lo que puedes llegar a hacer.
-  - ¡**Amplia documentación**\! R cuenta con una basta documentación y
-    la web está minada de tutoriales, sólo debes buscar. Por ejemplo,
-    **[Cookbook for R](http://www.cookbook-r.com)** que provee de
-    soluciones a tareas y problemas básicos en análisis de datos.
+- ¡**Escalabilidad**\! R está diseñado para el análisis de datos. Las
+  habilidades que vayas aprendiendo en R se pueden escalar fácilmente
+  con el tamaño de tus datos (set de datos con cientos a miles,
+  incluso millones de líneas).
+- ¡**Gráficos de alta calidad**\! R tiene innumerables funcionalidades
+  para todo tipo de gráficas a tu disposición para lograr una efectiva
+  visualización de tus resultados. Visita **[The R Graph
+  Gallery](http://www.r-graph-gallery.com/all-graphs/)** para ver
+  ejemplos de lo que puedes llegar a hacer.
+- ¡**Amplia documentación**\! R cuenta con una basta documentación y
+  la web está minada de tutoriales, sólo debes buscar. Por ejemplo,
+  **[Cookbook for R](http://www.cookbook-r.com)** que provee de
+  soluciones a tareas y problemas básicos en análisis de datos.
 
 Aprender R puede ser difícil y tomar tiempo en un principio, pero ¡no te
 preocupes, no estás sólo\! R cuenta con una amplia comunidad de usuarios
@@ -197,17 +189,17 @@ en inglés, tendrás acceso a más y mejor información.
 ¡Todo lo que necesitas en una ventana\! Como puedes ver en la imagen a
 continuación, RStudio se divide en 4 paneles principales:
 
-1.  Panel superior izquierdo: editor de texto para escribir
-    comandos/instrucciónes en R (R *script*), aquí puedes agregar
-    comentarios.
-2.  Panel inferior izquierdo: consola de R, donde se ejecutan las líneas
-    de comando en tu *script*.
-3.  Panel superior derecho: aquí puedes visualizar los datos presentes
-    en la memoria de R.
-4.  Panel inferior derecho: aquí encuentras 5 pestañas
-    *Files/Plots/Packages/Help/Viewer* en las que puedes navegar por tus
-    archivos, visualizar tus gráficos en tiempo real, administrar
-    paquetes de R, y pedir ayuda.
+1. Panel superior izquierdo: editor de texto para escribir
+   comandos/instrucciónes en R (R *script*), aquí puedes agregar
+   comentarios.
+2. Panel inferior izquierdo: consola de R, donde se ejecutan las líneas
+   de comando en tu *script*.
+3. Panel superior derecho: aquí puedes visualizar los datos presentes
+   en la memoria de R.
+4. Panel inferior derecho: aquí encuentras 5 pestañas
+   *Files/Plots/Packages/Help/Viewer* en las que puedes navegar por tus
+   archivos, visualizar tus gráficos en tiempo real, administrar
+   paquetes de R, y pedir ayuda.
 
 ![RStudio](RStudio_overview.png) RStudio interfaz
 
@@ -236,17 +228,17 @@ de Chile (*Megaptera novaeangliae*, *Balaenoptera musculus*,
 *Balaenoptera physalus*; Estrecho Magallanes, Chiloé, Reserva Nacional
 Pinguino de Humboldt).
 
-  - Descarga la tabla de datos `IR_table1.csv`
-    [AQUÍ](https://www.dropbox.com/s/htbjbqsdrcinrcr/IR_table1.csv?dl=0).
+- Descarga la tabla de datos `IR_table1.csv`
+  [AQUÍ](https://www.dropbox.com/s/htbjbqsdrcinrcr/IR_table1.csv?dl=0).
 
-  - Usa la función `read.table()` para leer o cargar la tabla de datos a
-    la memoria de **R**. La forma de cargar nuevos datos a la memoria de
-    R, es asignar dicho set de datos a un **objeto** usando `<-`
-    (**objeto \<- datos**).
+- Usa la función `read.table()` para leer o cargar la tabla de datos a
+  la memoria de **R**. La forma de cargar nuevos datos a la memoria de
+  R, es asignar dicho set de datos a un **objeto** usando `<-`
+  (**objeto \<- datos**).
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data <- read.table(file = "~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv", sep = ",", header = TRUE)
 # usa la ruta correspondiente en tu computadora hasta el archivo 'IR_table1.csv'
 # ahora los datos se encuentran guardados en el objeto "data"
@@ -258,13 +250,13 @@ data <- read.table(file = "~/Dropbox/CastroLab_database/workshops_data/IR_table1
 función `read.table`. Cada vez que llamamos una función debemos usar
 argumentos para indicar datos de entrada y/o preferencias:
 
-  - `file = "~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv"`
-    para indicar archivo del cual queremos copiar datos y cargarlos a la
-    memoria de R.
-  - `sep = ","` para indicar el separador de columnas de la tabla.
-  - `header = TRUE` para indicar que la tabla “IR\_table1.csv” sí
-    (“TRUE”) contiene *headers* o títulos de columna, de lo
-    contrario usaríamos “FALSE”.
+- `file = "~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv"`
+  para indicar archivo del cual queremos copiar datos y cargarlos a la
+  memoria de R.
+- `sep = ","` para indicar el separador de columnas de la tabla.
+- `header = TRUE` para indicar que la tabla “IR\_table1.csv” sí
+  (“TRUE”) contiene *headers* o títulos de columna, de lo
+  contrario usaríamos “FALSE”.
 
 Puedes conocer la descripción de cualquier función y sus argumentos
 escribiendo “?” + “nombre de la función” en la consola de R (e.g.,
@@ -278,18 +270,18 @@ largo (igual número de filas). Un vector es el tipo de dato más básico
 en R, está compuesto por una serie de valores los que pueden ser números
 o caracteres.
 
-  - Usa la función `View()` para ver el contenido del objeto `data`.
+- Usa la función `View()` para ver el contenido del objeto `data`.
 
 <!-- -->
 
     View(data)
 
-  - Prueba las siguientes funciones para inspeccionar nuestro nuevo
-    *data frame* “data”:
+- Prueba las siguientes funciones para inspeccionar nuestro nuevo
+  *data frame* “data”:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 dim(data) # muestra número de filas y columnas, respectivamente
 ```
 
@@ -299,7 +291,7 @@ dim(data) # muestra número de filas y columnas, respectivamente
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 nrow(data) # muestra número de filas
 ```
 
@@ -309,7 +301,7 @@ nrow(data) # muestra número de filas
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ncol(data) # muestra número de columnas
 ```
 
@@ -319,7 +311,7 @@ ncol(data) # muestra número de columnas
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 head(data) # muestra las primeras 6 filas
 ```
 
@@ -384,7 +376,7 @@ head(data) # muestra las primeras 6 filas
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 tail(data) # muestra las últimas 6 filas
 ```
 
@@ -456,7 +448,7 @@ tail(data) # muestra las últimas 6 filas
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 summary(data) # calcula estadísticas básicas para cada columna
 ```
 
@@ -556,50 +548,50 @@ Primero el número(s) de fila, seguido por el número(s) de columna.
 Existen diferentes formas de especificar coordenadas, que nos llevaran a
 obtener datos de diferente clase o tipo.
 
-  - Primer elemento en la primera columna del *data frame*, como vector:
+- Primer elemento en la primera columna del *data frame*, como vector:
 
 <!-- -->
 
     data[1, 1]
 
-  - Primer elemento en la sexta columna, como vector:
+- Primer elemento en la sexta columna, como vector:
 
 <!-- -->
 
     data[1, 6]
 
-  - Primera columna del *data frame*, como vector:
+- Primera columna del *data frame*, como vector:
 
 <!-- -->
 
     data[, 1]
 
-  - Primera columna del *data frame*, como *data frame*:
+- Primera columna del *data frame*, como *data frame*:
 
 <!-- -->
 
     data[1]
 
-  - Primeros tres elementos en la séptima columna, como vector:
+- Primeros tres elementos en la séptima columna, como vector:
 
 <!-- -->
 
     data[1:3, 7] # filas 1 a 3 de la columna 7
 
-  - La tercera fila del *data frame*, como *data frame*:
+- La tercera fila del *data frame*, como *data frame*:
 
 <!-- -->
 
     data[3, ]
 
-  - Equivalente a la función `head()`:
+- Equivalente a la función `head()`:
 
 <!-- -->
 
     data[1:6, ] 
 
-  - También puedes excluir datos usando el símbolo `-` (“*todo
-    menos…*”):
+- También puedes excluir datos usando el símbolo `-` (“*todo
+  menos…*”):
 
 <!-- -->
 
@@ -609,8 +601,8 @@ obtener datos de diferente clase o tipo.
 La función `c()` se utiliza para indicar una serie de valores o asignar
 una serie de valores a un vector (e.g., `peso_kg <- c(60,55,64,80,74)`).
 
-  - También puedes extraer datos usando el nombre de las columnas o
-    *headers*:
+- También puedes extraer datos usando el nombre de las columnas o
+  *headers*:
 
 <!-- -->
 
@@ -632,12 +624,12 @@ funciones, columnas (*headers*), etc.
 
 ## <span class="header-section-number">1.5</span> Factores
 
-  - La función `str()` muestra la estructura de un objeto e información
-    acerca de la clase y contenido de cada columna:
+- La función `str()` muestra la estructura de un objeto e información
+  acerca de la clase y contenido de cada columna:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 str(data)
 ```
 
@@ -688,7 +680,7 @@ Por ejemplo, en nuestro objeto `data` la columna `species` es un
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 levels(data$species)
 ```
 
@@ -699,7 +691,7 @@ levels(data$species)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 nlevels(data$species)
 ```
 
@@ -717,7 +709,7 @@ análisis o visualización de los datos. Una forma de re-ordenar los
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 levels(data$species)    # orden actual
 ```
 
@@ -728,7 +720,7 @@ levels(data$species)    # orden actual
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data$species <- factor(data$species, levels = c("Megaptera novaeangliae", "Balaenoptera musculus", "Balaenoptera physalus"))
 levels(data$species)    # después de re-ordenar
 ```
@@ -742,22 +734,22 @@ levels(data$species)    # después de re-ordenar
 
 ### <span class="header-section-number">1.5.1</span> Transformar factores
 
-  - Para transformar un `factor` a un `vector` de `caracteres`, puedes
-    usar la función `as.character()`:
+- Para transformar un `factor` a un `vector` de `caracteres`, puedes
+  usar la función `as.character()`:
 
 <!-- -->
 
     as.character(data$species)
 
-  - Transformar o convertir factores cuyos niveles son números (e.g.,
-    años) a un vector numérico es un poco más complejo. La función
-    `as.numeric()` muestra los números enteros asignados a cada *level*,
-    no los niveles en si. Una manera de evitarlo es convertir los
-    factores a caracteres, y luego a números:
+- Transformar o convertir factores cuyos niveles son números (e.g.,
+  años) a un vector numérico es un poco más complejo. La función
+  `as.numeric()` muestra los números enteros asignados a cada *level*,
+  no los niveles en si. Una manera de evitarlo es convertir los
+  factores a caracteres, y luego a números:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 year_fct <- factor(c(1990, 1983, 1977, 1998, 1990))
 as.numeric(year_fct)    # equivocado! sin mensajes de error...
 ```
@@ -768,7 +760,7 @@ as.numeric(year_fct)    # equivocado! sin mensajes de error...
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 as.numeric(as.character(year_fct))    # funciona!
 ```
 
@@ -778,7 +770,7 @@ as.numeric(as.character(year_fct))    # funciona!
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # otra forma es usar la función levels()
 as.numeric(levels(year_fct))[year_fct]    # funciona!
 ```
@@ -799,7 +791,7 @@ el nombre común “ballena jorobada”.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 species <- data$species    # copiamos la columna "species" en un objeto aparte para no alterar nuestro set de datos original
 head(species)
 ```
@@ -812,7 +804,7 @@ head(species)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 levels(species)    # identifica la posición del level que quieres renombrar (1)
 ```
 
@@ -823,7 +815,7 @@ levels(species)    # identifica la posición del level que quieres renombrar (1)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 levels(species)[1] <- "ballena jorobada"
 levels(species)
 ```
@@ -834,7 +826,7 @@ levels(species)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 head(species)
 ```
 
@@ -846,7 +838,7 @@ head(species)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # también puedes hacerlo para los otros dos levels
 levels(species)[2] <- "ballena azul"
 levels(species)[3] <- "ballena de aleta"
@@ -870,12 +862,12 @@ necesitar que la columna se mantenga como caracter. Para ésto, la
 función `read.table()` tiene disponible el argumento `stringsAsFactors`
 que puede ser definido como “FALSE” (`stringsAsFactors = FALSE`).
 
-  - Compara la diferencia entre la tabla de datos de estudio leída como
-    `factor` vs. `caracter`:
+- Compara la diferencia entre la tabla de datos de estudio leída como
+  `factor` vs. `caracter`:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data <- read.table("~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv", sep = ",", header = TRUE, stringsAsFactors = TRUE)
 str(data)
 ```
@@ -916,7 +908,7 @@ str(data)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data <- read.table("~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
 str(data)
 ```
@@ -975,19 +967,19 @@ la que quieras usarlo.
 Hay dos formas de **instalar paquetes en R**, a través de la consola y a
 través de la opción `Install` en la pestaña `Packages` de **RStudio**:
 
-1.  Para instalar e importar el paquete `tidyverse` usando la consola,
-    escribe:
+1. Para instalar e importar el paquete `tidyverse` usando la consola,
+   escribe:
 
 <!-- -->
 
     install.packages("tidyverse")
     library(tidyverse)
 
-2.  Para instalar e importar el paquete `tidyverse` usando RStudio,
-    dirígete a la pestaña `Packages` -\> `Install` -\> escribe el
-    nombre del paquete y haz clic en “Install”. Una vez instalado, para
-    importarlo sólo debes identificarlo y seleccionarlo en la lista de
-    paquetes.
+2. Para instalar e importar el paquete `tidyverse` usando RStudio,
+   dirígete a la pestaña `Packages` -\> `Install` -\> escribe el
+   nombre del paquete y haz clic en “Install”. Una vez instalado, para
+   importarlo sólo debes identificarlo y seleccionarlo en la lista de
+   paquetes.
 
 ![install\_packages](InstallPackages_RStudio.png) Instalación de
 paquetes en RStudio
@@ -999,12 +991,12 @@ información de tablas usando `[ ]`, a continuación vamos a utilizar los
 paquetes `dplyr` y `tidyr` para manipular nuestra tabla de datos más
 fácil, rápido y con más funcionalidades.
 
-  - Vamos a leer nuevamente nuestra tabla de datos, ésta vez usando la
-    función `read_csv()` del paquete `tidyverse`:
+- Vamos a leer nuevamente nuestra tabla de datos, ésta vez usando la
+  función `read_csv()` del paquete `tidyverse`:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data <- read_csv("~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv")
 ```
 
@@ -1022,7 +1014,7 @@ data <- read_csv("~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv")
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # Usa la función str() para inspeccionar los datos
 str(data)
 ```
@@ -1098,36 +1090,36 @@ Como podrás notar, la función `read_csv()` hace algunos cambios al
 cargar la tabla con respecto a lo que revisamos anteriormente usando
 `read.table()`. Las diferencias son:
 
-1.  Al leer la tabla, muestra un resumen del tipo de dato de cada
-    columna, y sólo muestra las primeras filas y tantas columnas como se
-    puedan visualizar en la pantalla.
-2.  Las columnas de clase `character` (caracteres) **no** son
-    convertidas en factores.
+1. Al leer la tabla, muestra un resumen del tipo de dato de cada
+   columna, y sólo muestra las primeras filas y tantas columnas como se
+   puedan visualizar en la pantalla.
+2. Las columnas de clase `character` (caracteres) **no** son
+   convertidas en factores.
 
 A continuación vamos a aprender algunas de las funciones más comunes de
 `dplyr`:
 
-  - `select()`: extraer columnas.
-  - `filter()`: extraer filas según condiciones.
-  - `mutate()`: crear nuevas columnas usando la información de otras
-    columnas.
-  - `group_by()` y `summarize()`: cálcula estadísticas en datos
-    agrupados.
-  - `arrange()`: ordena resultados.
-  - `count()`: conteo de datos.
+- `select()`: extraer columnas.
+- `filter()`: extraer filas según condiciones.
+- `mutate()`: crear nuevas columnas usando la información de otras
+  columnas.
+- `group_by()` y `summarize()`: cálcula estadísticas en datos
+  agrupados.
+- `arrange()`: ordena resultados.
+- `count()`: conteo de datos.
 
 <div id="seleccionar-columnas-y-filtrar-filas" class="section level2">
 
 ## <span class="header-section-number">2.1</span> Seleccionar columnas y filtrar filas
 
-  - Para **seleccionar columnas** de una tabla de datos o *data frame*,
-    vamos a usar la función `select()`. Luego, para **seleccionar
-    filas** de acuerdo a cierto criterio (filtrar), vamos a usar la
-    función `filter()`.
+- Para **seleccionar columnas** de una tabla de datos o *data frame*,
+  vamos a usar la función `select()`. Luego, para **seleccionar
+  filas** de acuerdo a cierto criterio (filtrar), vamos a usar la
+  función `filter()`.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 select(data, sample_ID, geo_loc_name, species, observed) # los argumentos son, primero el objeto que contiene el data frame, y luego los títulos de las columnas a extraer
 ```
 
@@ -1150,7 +1142,7 @@ select(data, sample_ID, geo_loc_name, species, observed) # los argumentos son, p
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 dplyr::filter(data, geo_loc_name == "Chiloe") # los argumentos son, primero el objeto que contiene el data frame, y luego la columna con el criterio de filtro
 ```
 
@@ -1206,11 +1198,11 @@ innecesariamente.
 
 ## <span class="header-section-number">2.2</span> Funciones anidadas y ***pipes***
 
-  - Vamos a anidar funciones (i.e. una función dentro de otra):
+- Vamos a anidar funciones (i.e. una función dentro de otra):
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 nrow(data)
 ```
 
@@ -1220,7 +1212,7 @@ nrow(data)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ncol(data)
 ```
 
@@ -1230,7 +1222,7 @@ ncol(data)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data_div <- select(filter(data, shannon > 1.5), sample_ID, geo_loc_name, species, observed, shannon)
 head(data_div)
 ```
@@ -1249,7 +1241,7 @@ head(data_div)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 nrow(data_div) # 39 muestras tienen un índice de shannon mayor a 1.5
 ```
 
@@ -1259,7 +1251,7 @@ nrow(data_div) # 39 muestras tienen un índice de shannon mayor a 1.5
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ncol(data_div)
 ```
 
@@ -1271,15 +1263,15 @@ Es importante recordar que **R lee la línea de comando desde dentro
 hacia fuera**. En éste caso, primero se hizo el filtro y luego la
 selección.
 
-  - Usar funciones anidadas puede ser engorroso cuando quieres hacer
-    muchas operaciones consecutivas, en cuyo caso es convenientes usar
-    *pipes*. ***Pipes*** te permiten usar varias funciones consecutivas,
-    de forma que el ***output* de una función será en *input* de la
-    siguiente**. Los *pipes* en R lucen así: `%>%`.
+- Usar funciones anidadas puede ser engorroso cuando quieres hacer
+  muchas operaciones consecutivas, en cuyo caso es convenientes usar
+  *pipes*. ***Pipes*** te permiten usar varias funciones consecutivas,
+  de forma que el ***output* de una función será en *input* de la
+  siguiente**. Los *pipes* en R lucen así: `%>%`.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data %>%
   dplyr::filter(shannon > 1.5) %>% 
   dplyr::select(sample_ID, geo_loc_name, species, observed, shannon)
@@ -1318,7 +1310,7 @@ matemáticos.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data <- data %>% 
   dplyr::mutate(log10_dom_abs = log10(dominance_absolute))
 # Dale un vistazo a la tabla (View(data)), la última columna es la nueva "log10_dom_abs", también notarás que, en la pestaña "Environment" de RStudio, ahora el objeto "data" tiene "31 variables".
@@ -1365,13 +1357,13 @@ los nombres de la columna que contiene valores categóricos, a partir de
 las cuales queremos hacer algún cálculo. `summarize()` colapsa cada
 grupo en una única fila.
 
-  - Vamos a calcular el promedio y desviación estándar (`mean()`;
-    `sd()`) del número de taxas observadas (columna “observed”) por zona
-    (columna “geo\_loc\_name”) y especie (columna “species”) de ballena:
+- Vamos a calcular el promedio y desviación estándar (`mean()`;
+  `sd()`) del número de taxas observadas (columna “observed”) por zona
+  (columna “geo\_loc\_name”) y especie (columna “species”) de ballena:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data %>% 
   group_by(geo_loc_name, species) %>% # puedes agrupar por una o múltiples columnas
   dplyr::summarize(mean_observed = mean(observed), # una vez que los datos están agrupados, también puedes aplicar múltiples análisis al mismo tiempo y en múltiples variables
@@ -1392,14 +1384,14 @@ data %>%
     ## 4 Reserva Nacio… Balaeno…          33.9       22.3          1.34      0.717
     ## 5 Reserva Nacio… Megapte…          43.3       23.6          1.52      0.564
 
-  - Si lo necesitas, también puedes agregar un filtro antes de agrupar
-    los datos y hacer estadística de los grupos. Por ejemplo, supongamos
-    que decidimos no considerar aquellas muestras con menos de 20 taxas
-    (`observed` \< 20):
+- Si lo necesitas, también puedes agregar un filtro antes de agrupar
+  los datos y hacer estadística de los grupos. Por ejemplo, supongamos
+  que decidimos no considerar aquellas muestras con menos de 20 taxas
+  (`observed` \< 20):
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data %>% 
   dplyr::filter(observed > 20) %>% 
   group_by(geo_loc_name, species) %>% 
@@ -1419,14 +1411,14 @@ data %>%
     ## 4 Reserva Nacional Pinguino de Hum… Balaenoptera physal…               46.8
     ## 5 Reserva Nacional Pinguino de Hum… Megaptera novaeangl…               49.2
 
-  - Muchas veces es útil re-organizar los datos para una más eficiente
-    interpretación de los resultados. Por ejemplo, si queremos ordenar
-    los resultados por número promedio de taxa observado por grupo
-    (“mean\_observed”) en orden decreciente:
+- Muchas veces es útil re-organizar los datos para una más eficiente
+  interpretación de los resultados. Por ejemplo, si queremos ordenar
+  los resultados por número promedio de taxa observado por grupo
+  (“mean\_observed”) en orden decreciente:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data %>% 
   group_by(geo_loc_name, species) %>% 
   dplyr::summarize(mean_observed = mean(observed), 
@@ -1459,7 +1451,7 @@ cada variable, o combinación de ellas, en tus datos.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data %>% 
   dplyr::count(species) # ¿cuantas muestras por especie de ballena tenemos?
 data %>% 
@@ -1484,17 +1476,17 @@ Supongamos que nos interesa explorar la relación entre la diversidad del
 microbioma de la piel (“shannon”) de las especies de ballena (“species”)
 y su locación geográfica.
 
-  - Primero, necesitamos usar `group_by()` y `summarize()`, para agrupar
-    nuestras variables de interés y crear una nueva columna con los
-    valores de índice de Shannon promedio para cada grupo. Después,
-    usamos la función `spread()` para transformar `data` de modo que:
-    cada especie ahora sea una columna, cada locación geográfica ahora
-    sea una fila, y los valores de Shannon estén en cada celda según
-    corresponda.
+- Primero, necesitamos usar `group_by()` y `summarize()`, para agrupar
+  nuestras variables de interés y crear una nueva columna con los
+  valores de índice de Shannon promedio para cada grupo. Después,
+  usamos la función `spread()` para transformar `data` de modo que:
+  cada especie ahora sea una columna, cada locación geográfica ahora
+  sea una fila, y los valores de Shannon estén en cada celda según
+  corresponda.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data_spread <- data %>% 
   group_by(geo_loc_name, species) %>% 
   dplyr::summarize(mean_shannon = mean(shannon)) %>% 
@@ -1514,7 +1506,7 @@ head(data_spread)
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # Como el número de taxa observada varía por cada muestra, tenemos como resultado varias celdas "NA" ("missing data"). Para éstos casos, la función spread() viene con el argumento "fill".
 ```
 
@@ -1525,12 +1517,12 @@ tabla de datos como `data_spread`, en la que los nombres de las especies
 (“species”) son columnas, pero en vez de ello, queremos que las especies
 sean valores de la variable “species” (columna: “species”).
 
-  - Para lograrlo, necesitamos reunir los nombres de las columnas
-    (especies) y convertirlos en un set de variables:
+- Para lograrlo, necesitamos reunir los nombres de las columnas
+  (especies) y convertirlos en un set de variables:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data_gather <- data_spread %>% 
   gather(key = species, value = mean_shannon, -geo_loc_name) %>% 
   dplyr::filter(!is.na(mean_shannon))
@@ -1568,12 +1560,12 @@ archivos CSV (*comma-separated values*) en R, hay una función para
 **generar** archivos CSV a partir de tablas de datos en contenidas como
 `objetos` en la memoria de R.
 
-  - Por ejemplo, para exportar el *data frame* que creamos recién usando
-    la función `gather()` y `filter()`:
+- Por ejemplo, para exportar el *data frame* que creamos recién usando
+  la función `gather()` y `filter()`:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # Los argumentos básicos de write_csv() son primero indicar el objeto que se quiere exportar y luego la ruta y nombre del archivo de salida, incluyendo la extensión .csv
 write_csv(data_gather, path = "data_gather.csv")
 ```
@@ -1616,27 +1608,27 @@ comando templado que es útil para diferentes tipos de gráficos:
 
     ggplot(data = , mapping = aes()) + ()
 
-  - Usamos la función `ggplot()` y el argumento `data` para indicar a
-    partir de qué datos se debe crear la gráfica. Luego, la función
-    `aes()` (*aesthetic*) para seleccionar las variables a graficar y
-    como presentarlas, e.g. ejes *x* e *y* o características como
-    tamaño, forma, color, etc.
+- Usamos la función `ggplot()` y el argumento `data` para indicar a
+  partir de qué datos se debe crear la gráfica. Luego, la función
+  `aes()` (*aesthetic*) para seleccionar las variables a graficar y
+  como presentarlas, e.g. ejes *x* e *y* o características como
+  tamaño, forma, color, etc.
 
-  - `ggplot2` ofrece “**`geoms`**” para indicar la representación
-    gráfica de los datos (puntos, líneas, barras), algunos de ellos
-    son:
+- `ggplot2` ofrece “**`geoms`**” para indicar la representación
+  gráfica de los datos (puntos, líneas, barras), algunos de ellos
+  son:
 
-  - `geom_point()` para gráficos de dispersión.
+- `geom_point()` para gráficos de dispersión.
 
-  - `geom_boxplot()` para gráficos de caja (boxplots).
+- `geom_boxplot()` para gráficos de caja (boxplots).
 
-  - `geom_line()` para líneas de tendencia, series de tiempo, etc.
+- `geom_line()` para líneas de tendencia, series de tiempo, etc.
 
 Usa `+` para agregar un `geom` a línea de comando de `ggplot`.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = shannon, y = evenness_camargo)) + geom_point()
 ```
 
@@ -1646,14 +1638,14 @@ ggplot(data = data, aes(x = shannon, y = evenness_camargo)) + geom_point()
 
 **Notas**
 
-  - Toda la información o *inputs* que agregues en la función `ggplot()`
-    son considerados por cualquier `geom` (i.e., éstas son
-    configuraciones universales), lo que incluye las variables para el
-    eje *x* e *y* indicados usando `aes()`.
-  - También puedes especificar *inputs* para un `geom` dado,
-    independientemente de los definidos en la función `ggplot()`.
-  - El signo `+` se usa para añadir nuevas funciones y se usa al final
-    de cada línea que contiene la función anterior.
+- Toda la información o *inputs* que agregues en la función `ggplot()`
+  son considerados por cualquier `geom` (i.e., éstas son
+  configuraciones universales), lo que incluye las variables para el
+  eje *x* e *y* indicados usando `aes()`.
+- También puedes especificar *inputs* para un `geom` dado,
+  independientemente de los definidos en la función `ggplot()`.
+- El signo `+` se usa para añadir nuevas funciones y se usa al final
+  de cada línea que contiene la función anterior.
 
 </div>
 
@@ -1667,7 +1659,7 @@ variables a graficar (ejes *x* e *y*), y escogemos un `geom`.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = observed, y = shannon)) + geom_point()
 ```
 
@@ -1683,7 +1675,7 @@ los puntos (`color`).
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = observed, y = shannon)) + geom_point(alpha = 0.4, color = "blue")
 ```
 
@@ -1699,7 +1691,7 @@ datos. Por ejemplo, vamos a anotar nuestra gráfica por especie
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = observed, y = shannon)) + geom_point(alpha = 0.7, aes(color = geo_loc_name, shape = species))
 ```
 
@@ -1717,14 +1709,14 @@ ggplot(data = data, aes(x = observed, y = shannon)) + geom_point(alpha = 0.7, ae
 distribución de los datos de acuerdo a una variable o condición de
 interés.
 
-  - Por ejemplo, para visualizar la distribución de número de taxas
-    observadas en el microbioma de la piel de las ballenas muestreadas
-    en Chiloé, Estrecho Magallanes y Parque Nacional Pingüino de
-    Humboldt:
+- Por ejemplo, para visualizar la distribución de número de taxas
+  observadas en el microbioma de la piel de las ballenas muestreadas
+  en Chiloé, Estrecho Magallanes y Parque Nacional Pingüino de
+  Humboldt:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = geo_loc_name, y = observed)) + 
   geom_boxplot()
 ```
@@ -1733,25 +1725,25 @@ ggplot(data = data, aes(x = geo_loc_name, y = observed)) +
 
 ![](introR_files/figure-html/boxplot1-1.png)
 
-  - Sin embargo, ¿podría éste resultado estar sesgado por el tamaño
-    muestreal de cada locación geográfica?. Veamos cuántas muestras
-    tenemos por locación geográfica:
+- Sin embargo, ¿podría éste resultado estar sesgado por el tamaño
+  muestreal de cada locación geográfica?. Veamos cuántas muestras
+  tenemos por locación geográfica:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 data %>% 
   dplyr::count(geo_loc_name, sort = TRUE)
 ```
 
 </div>
 
-  - Agregar puntos al *boxplot* nos da una mejor idea del número de
-    muestras y su distribución:
+- Agregar puntos al *boxplot* nos da una mejor idea del número de
+  muestras y su distribución:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = geo_loc_name, y = observed)) + 
   geom_boxplot(alpha = 0.5) +
   geom_jitter(alpha = 0.5, color = "tomato")
@@ -1779,14 +1771,14 @@ sub-muestreo de un experimento RNAseq, que contiene las *read counts* de
 8 transcritos después de 0, 3, 6, 12 y 24 horas de exposición a un
 estímulo X.
 
-  - Descarga la tabla de datos `VD_table2.tbl`
-    [AQUÍ](https://www.dropbox.com/s/rlksi77bzep5g2t/VD_table2.tbl?dl=0).
+- Descarga la tabla de datos `VD_table2.tbl`
+  [AQUÍ](https://www.dropbox.com/s/rlksi77bzep5g2t/VD_table2.tbl?dl=0).
 
-  - Primero vamos a cargar dicha tabla a la memoria de R:
+- Primero vamos a cargar dicha tabla a la memoria de R:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 tr_counts <- read_table2(file = "~/Dropbox/CastroLab_database/workshops_data/VD_table2.tbl", col_names = TRUE)
 ```
 
@@ -1804,7 +1796,7 @@ tr_counts <- read_table2(file = "~/Dropbox/CastroLab_database/workshops_data/VD_
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # Usamos la función read_table2() para leer el archivo `data/VD_table2.tbl` y asignarlo al nuevo objeto `tr_counts`.
 # El argumento col_names = TRUE es para indicar la presencia de títulos o nombres para cada columna.
 tr_counts # dale un vistazo a la nueva tabla de datos
@@ -1831,14 +1823,14 @@ lineal, usando `ggplot() + geom_line()`, en el que el eje *X* represente
 una serie de tiempo, es necesario que los tiempos muestreales sean una
 variable (no nombres de columnas, como en `tr_counts`).
 
-  - Entonces, recordamos lo aprendido anteriormente y utilizamos la
-    función `gather()` para **remodelar** `tr_counts`, reuniendo los
-    nombres de las columnas (tiempos) y transformándolos en un set de
-    variables:
+- Entonces, recordamos lo aprendido anteriormente y utilizamos la
+  función `gather()` para **remodelar** `tr_counts`, reuniendo los
+  nombres de las columnas (tiempos) y transformándolos en un set de
+  variables:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 tr_plot <- tr_counts %>% 
   gather(key = time, value = read_counts, -transcripts)
 # View(tr_plot)
@@ -1846,12 +1838,12 @@ tr_plot <- tr_counts %>%
 
 </div>
 
-  - Ahora podemos graficar las *read counts* de cada transcrito a través
-    de los 5 puntos muestreales, usando `ggplot() + geom_line()`:
+- Ahora podemos graficar las *read counts* de cada transcrito a través
+  de los 5 puntos muestreales, usando `ggplot() + geom_line()`:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = tr_plot, aes(x = time, y = read_counts, group = transcripts)) + 
   geom_line()
 ```
@@ -1860,11 +1852,11 @@ ggplot(data = tr_plot, aes(x = time, y = read_counts, group = transcripts)) +
 
 ![](introR_files/figure-html/lineplot1-1.png)
 
-  - ¿Aún no? Podemos anotar las líneas para identificar cada transcrito:
+- ¿Aún no? Podemos anotar las líneas para identificar cada transcrito:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = tr_plot, aes(x = time, y = read_counts, group = transcripts)) + 
   geom_line(aes(color = transcripts))
 ```
@@ -1878,7 +1870,7 @@ los valores de *read counts* es bastante amplio…
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 min(tr_plot$read_counts) # 'objeto$columna'
 ```
 
@@ -1888,7 +1880,7 @@ min(tr_plot$read_counts) # 'objeto$columna'
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 max(tr_plot$read_counts)
 ```
 
@@ -1900,14 +1892,14 @@ Al graficar, en muchos cachos es conveniente considerar la **escala** de
 las observaciones, con el fin de obtener una mejor visualización de la
 distribución de los datos.
 
-  - Vamos a convertir los valores de *read counts* al logarítmo base 10
-    de las *read counts*, de modo de reducir el rango de distribución de
-    los valores. Para ello, modificamos la escala del eje *Y* usando
-    `scale_y_log10()`:
+- Vamos a convertir los valores de *read counts* al logarítmo base 10
+  de las *read counts*, de modo de reducir el rango de distribución de
+  los valores. Para ello, modificamos la escala del eje *Y* usando
+  `scale_y_log10()`:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = tr_plot, aes(x = time, y = read_counts, group = transcripts)) + 
   geom_line(aes(color = transcripts)) + 
   scale_y_log10()
@@ -1924,11 +1916,11 @@ ggplot(data = tr_plot, aes(x = time, y = read_counts, group = transcripts)) +
 ¿A qué crees que se debe el mensaje de advertencia? ¿Qué otro aspecto
 del gráfico crees tú es necesario modificar?
 
-  - Solución:
+- Solución:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = tr_plot, aes(x = time, y = log10(read_counts+1), group = transcripts)) + 
   geom_line(aes(color = transcripts))
 ```
@@ -1942,7 +1934,7 @@ que ggplot respete el orden deseado de tu serie de tiempo:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 tr_plot$time <- factor(tr_plot$time, levels=unique(tr_plot$time))
 ggplot(data = tr_plot, aes(x = time, y = log10(read_counts+1), group = transcripts)) + 
   geom_line(aes(color = transcripts))
@@ -1961,12 +1953,12 @@ ggplot(data = tr_plot, aes(x = time, y = log10(read_counts+1), group = transcrip
 *Faceting* es una propiedad de `ggplot` que permite dividir un gráfico
 en múltiples gráficos basado en un factor incluído en el set de datos.
 
-  - Continuando con el gráfico que hemos estado trabajando, usamos
-    `facet_wrap()` para hacer un gráfico por cada transcrito:
+- Continuando con el gráfico que hemos estado trabajando, usamos
+  `facet_wrap()` para hacer un gráfico por cada transcrito:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = tr_plot, aes(x = time, y = log10(read_counts+1), group = transcripts)) + 
   geom_line(aes(color = transcripts)) + 
   facet_wrap(~transcripts)
@@ -1987,14 +1979,14 @@ estéticas de los gráficos creados con `ggplot`. Puedes revisar la lista
 completa de *themes* disponibles
 [aquí](http://ggplot2.tidyverse.org/reference/ggtheme.html).
 
-  - Por ejemplo, gráficos con fondo blanco lucen mejor cuando son
-    impresos. Podemos hacer que el fondo de las gráficas sea blanco
-    usando la función `theme_bw()`, también podemos remover la
-    cuadrícula:
+- Por ejemplo, gráficos con fondo blanco lucen mejor cuando son
+  impresos. Podemos hacer que el fondo de las gráficas sea blanco
+  usando la función `theme_bw()`, también podemos remover la
+  cuadrícula:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = tr_plot, aes(x = time, y = log10(read_counts+1), group = transcripts)) + 
   geom_line(aes(color = transcripts)) + 
   facet_wrap(~ transcripts) + 
@@ -2026,12 +2018,12 @@ para pensar en formas de mejorar tus gráficos, también puedes inspirarte
 buscando ejemplos en internet, como
 [aquí](https://www.r-graph-gallery.com/portfolio/ggplot2-package/).
 
-  - Vamos a revisar un ejemplo de como personalizar el *boxplot* que
-    estuvimos trabajando anteriormente:
+- Vamos a revisar un ejemplo de como personalizar el *boxplot* que
+  estuvimos trabajando anteriormente:
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 ggplot(data = data, aes(x = geo_loc_name, y = observed, color = geo_loc_name)) + 
   geom_boxplot(alpha = 0.5) +
   geom_jitter(alpha = 0.5) + 
@@ -2063,7 +2055,7 @@ separados en una única figura, usando la función `grid.arrange()`.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 p1 <- ggplot(data = data, aes(x = geo_loc_name, y = observed, color = geo_loc_name)) + 
   geom_boxplot(alpha = 0.5) +
   geom_jitter(alpha = 0.5) + 
@@ -2101,16 +2093,16 @@ grid.arrange(p1, p2, ncol = 2, widths = c(1,2.5))
 Después de crear tu gráfico o figura, puedes guardarlo en un archivo de
 formato de preferencia (e.g., png, pdf):
 
-  - En **RStudio**, dirígete a la pestaña `Plots` y haz clic en `Export`
-    para guardar el gráfico que estés visualizando.
+- En **RStudio**, dirígete a la pestaña `Plots` y haz clic en `Export`
+  para guardar el gráfico que estés visualizando.
 
-  - También puedes usar la función `ggsave()` para, no solo guardar tus
-    gráficos, sino que también modificar la dimensión y resolución por
-    medio de los argumentos `width`, `height` y `dpi`.
+- También puedes usar la función `ggsave()` para, no solo guardar tus
+  gráficos, sino que también modificar la dimensión y resolución por
+  medio de los argumentos `width`, `height` y `dpi`.
 
 <div class="sourceCode">
 
-``` sourceCode r
+```sourceCode
 # Asigna el gráfico a un 'objeto'
 plot <- grid.arrange(p1, p2, ncol = 2, widths = c(1,2.5), heights = c(3,1))
 # Exporta la nueva figura en fig_output/
