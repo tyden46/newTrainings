@@ -15,11 +15,11 @@ Bioinformatic Data Analysis for Metagenomes and Amplicons Using R
 
 ### ![](one.png) [Introduction to R: Data manipulation and visualization](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/IntroductionToRDataManipulationAndVisualization.md) ![](r.png)
 
-### ![](two.png) [Sequence Analysis of 16 with DADA2](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/An%C3%A1lisis%20de%20secuencias%20de%2016S%20con%20DADA2.md) ![](bioinformatics.png)
+### ![](two.png) [Sequence Analysis of 16S with DADA2](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/An%C3%A1lisis%20de%20secuencias%20de%2016S%20con%20DADA2.md) ![](bioinformatics.png)
 
 ### ![](three.png) [Introduction to Phyloseq and to Diversity Analysis](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/Introducci%C3%B3n%20a%20phyloseq%20y%20a%20an%C3%A1lisis%20de%20diversidad.md) ![](bacteria.png)
 
-### ![](four.png) [Searching genes of interest in metagenomic shotgun data](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/B%C3%BAsqueda%20de%20genes%20de%20inter%C3%A9s%20en%20datos%20de%20metagen%C3%B3mica%20shotgun.md) ![](gene_search.png)
+### ![](four.png) [Searching for genes of interest in metagenomic shotgun data](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/B%C3%BAsqueda%20de%20genes%20de%20inter%C3%A9s%20en%20datos%20de%20metagen%C3%B3mica%20shotgun.md) ![](gene_search.png)
 
 ### ![](five.png) [Genome Visualization and Curation of Metagenome-assembled Genomes (MAGs)](https://github.com/tyden46/newTrainings/blob/master/DataAnalysisForMetagenomesAndAmplicons/Introducci%C3%B3n%20a%20phyloseq%20y%20a%20an%C3%A1lisis%20de%20diversidad.md) ![](genome.png)
 

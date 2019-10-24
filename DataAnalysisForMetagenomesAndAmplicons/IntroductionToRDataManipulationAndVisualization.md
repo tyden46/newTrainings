@@ -2,7 +2,7 @@
 
 <div class="book-summary">
 
-- [Introduction to R](http://www.castrolab.org/isme/introR/introR.html)
+- [Introduction to R](./)
 
 - - [**0.1** About the course](#workshop)
 
@@ -20,7 +20,7 @@
 
 - [**2** Data Manipulation in R](#manipulacion-de-datos-en-r)
   
-  - [**2.1** Selecting columns and riltering rows](#seleccionar-columnas-y-filtrar-filas)
+  - [**2.1** Selecting columns and filtering rows](#seleccionar-columnas-y-filtrar-filas)
   - [**2.2** Nested Functions and
     ***pipes***](#funciones-anidadas-y-pipes)
   - [**2.3** ***Mutate***: creating new columns from existing information in other columns](#mutate-crear-nuevas-columnas-desde-informacion-existente-en-otras-columnas)
@@ -54,7 +54,7 @@
 
 <div class="book-header" role="navigation">
 
-# [Introducción R, manipulación y visualización en R](./)
+# [Introduction to R, Data Manipulation and Visualization in R](./)
 
 </div>
 
@@ -66,62 +66,51 @@
 
 <div id="header">
 
-*ISME Latin America, Septiembre 2019*
+*ISME Latin America, September 2019*
 
 </div>
 
 <div id="workshop" class="section level2">
 
-## <span class="header-section-number">0.1</span> Acerca del curso
+## <span class="header-section-number">0.1</span> About the Course
 
-El tutorial a continuación fue creado especialmente para guiar el
-trabajo práctico del [**curso pre-congreso ISME Latin America
-2019**](https://isme-la2019.org/curso-pre-congreso/): **Análisis de
-datos bioinformáticos para metagenomas y amplicones usando R**. A
-realizarse el próximo 9 y 10 de septiembre en la [Universidad Técnica
+The following tutorial was created specifically as a practical guide to be completed during the 1st ISME (International Society for Microbial Ecology) Latin America Congress 2019: **Bioinformatic Data Analysis for Metagenomes and Amplicons Using R**. Which took place on the 9th and 10th of September, 2019 at the [Universidad Técnica
 Federico Santa María](https://www.usm.cl), Valparaíso, Chile.
 
-![](back.png) [**Ir a la página de inicio del
-curso**](http://castrolab.org/isme/bienvenida_WorkshopISME.html)
+![](back.png) [**Click Here to Go to the Initial Page of the Course**](http://castrolab.org/isme/bienvenida_WorkshopISME.html)
 
-El curso cuenta con **6 unidades**. Ahora, usted se encuentra en la
-unidad: **Introducción a R: Manipulación de datos y visualización**
+This course has 6 units. You are now in the unit: **Introduction to R: Data manipulation and visualization**
 ![](r.png)
 
-> **Otras unidades del curso son**:
+> **The Other Units of the Course are**:
 > 
-> [**Análisis de secuencias de 16S con
-> DADA2**](http://www.castrolab.org/isme/dada2/dada2.html)
+> [**Sequence Analysis of 16S with DADA2**](http://www.castrolab.org/isme/dada2/dada2.html)
 > ![](bioinformatics.png)
 > 
-> [**Introducción a phyloseq y a análisis de
-> diversidad**](http://www.castrolab.org/isme/biodiversity/biodiversity.html)
+> [**Introduction to phyloseq and to Diversity Analysis**](http://www.castrolab.org/isme/biodiversity/biodiversity.html)
 > ![](bacteria.png)
 > 
-> [**Búsqueda de genes de interés en datos de metagenómica
-> *shotgun***](http://www.castrolab.org/isme/gene_search/gene_search.html)
+> [**Searching for genes of interest in metagenomic shotgun data**](http://www.castrolab.org/isme/gene_search/gene_search.html)
 > ![](gene_search.png)
 > 
-> [**Visualización y curación de genomas ensamblados desde metagenomas
-> (MAGs)**](http://www.castrolab.org/isme/mags/mags.html)
+> [**Genome visualization and Curation of Metagenome-assembled Genomes (MAGs)**](http://www.castrolab.org/isme/mags/mags.html)
 > ![](genome.png)
 > 
-> [**Redes de co-ocurrencia de
-> microorganismos**](http://www.castrolab.org/isme/microbial_networks/microbial_networks.html)
+> [**Microorganism Co-occurrence Networks**](http://www.castrolab.org/isme/microbial_networks/microbial_networks.html)
 > ![](network.png)
 
 -----
 
-- Profesor: **Dr. Eduardo Castro-Nallar** (<eduardo.castro@unab.cl>)
+- Professor: **Dr. Eduardo Castro-Nallar** (<eduardo.castro@unab.cl>)
 
-- Ayudantes:
+- Assistants:
   
   - **Dr. Florence Gutzwiller** (<florence.gutzwiller@gmail.com>)
   - **M.Sc. Katterinne N. Mendez** (<mendez.katterinne@gmail.com>)
 
 **[CASTRO LAB](http://www.castrolab.org)**
 
-[Centro de Bioinformática y Biología Integrativa](http://www.cbib.cl) |
+[Center for Bioinformatics & Integrative Biology](http://www.cbib.cl) |
 [Universidad Andrés Bello](https://www.unab.cl)
 
 ![](UNAB_CBIB_horizontal.png)
@@ -132,76 +121,44 @@ unidad: **Introducción a R: Manipulación de datos y visualización**
 
 <div id="introR" class="section level1">
 
-# <span class="header-section-number">1</span> Introducción a R
+# <span class="header-section-number">1</span> Introduction to R
 
 <div id="por-que-r" class="section level2">
 
-## <span class="header-section-number">1.1</span> ¿Por qué R?
+## <span class="header-section-number">1.1</span> Why R?
 
-Tus análisis serán una serie de **comandos** escritos (R *script*), lo
-que es muy conveniente porque:
+Your analyses will be a series of written commands (R *script*), which is very convenient because:
 
-- Conlleva a tener el control y completo entendimiento de qué estás
-  haciendo (**adiós a la caja negra** en tus análisis *in silico*).
-- ¡**Reproducibilidad**\! Si necesitas repetir el análisis, agregar
-  más datos o corregir un error, sólo necesitas correr tu *script*
-  nuevamente y tus tests estadísticos y gráficos se actualizarán
-  automáticamente.
-- Tus análisis son claros y transparentes, cualquier colega o tú en el
-  futuro pueden leerlo para encontrar errores y/o hacer mejoras.
-- Puedes **comentar tu *script***. Agregar comentarios, explicaciones
-  o relatos en tu código facilitará entender, paso a paso, el por qué
-  de tus análisis a tus colegas, e incluso a ti mísmo en el futuro.
+- Allows you to have complete control and understanding of what you are doing (**goodbye to the black box** in your *in silico* analysis).
+- **Reproducibility**\! If you need to repeat an analysis, add more data, or correct an error, you only need to run your *script* again and your statistical tests and figures will update automatically.
+- Your analyses are clear and transparent, any of your colleges or even your future self can reed it to find errors and/or make it better.
+- You can comment on your script. Addding comments, explanations, or a narrative to your code can help you explain, step by step, the *why* behind your analyses to your collegues and to your future self.
 
-Otras importantes ventajas de usar R son:
+Other important advantages of using R are:
 
-- ¡**Escalabilidad**\! R está diseñado para el análisis de datos. Las
-  habilidades que vayas aprendiendo en R se pueden escalar fácilmente
-  con el tamaño de tus datos (set de datos con cientos a miles,
-  incluso millones de líneas).
-- ¡**Gráficos de alta calidad**\! R tiene innumerables funcionalidades
-  para todo tipo de gráficas a tu disposición para lograr una efectiva
-  visualización de tus resultados. Visita **[The R Graph
-  Gallery](http://www.r-graph-gallery.com/all-graphs/)** para ver
-  ejemplos de lo que puedes llegar a hacer.
-- ¡**Amplia documentación**\! R cuenta con una basta documentación y
-  la web está minada de tutoriales, sólo debes buscar. Por ejemplo,
-  **[Cookbook for R](http://www.cookbook-r.com)** que provee de
-  soluciones a tareas y problemas básicos en análisis de datos.
+- **Scalability**\! R is designed for data analysis. The tools you will learn to use in R can be easily scaled with the size of your data sets (data sets in R can be hundreds of thousands, even millions of lines long).
+- **High quality Figures**\! R has innumerable functionalites for all types of figures at your fingertips in order to achieve an effective visualization of your results. Visit **[The R Graph Gallery](http://www.r-graph-gallery.com/all-graphs/)** to see examples of what you might learn to do.
+- **Lots of documentation**! R has plenty of documentation and the web is full of tutorials, you just have to look and you'll find it. For example,
+  **[Cookbook for R](http://www.cookbook-r.com)** provides solutions for basic data analysis tasks.
 
-Aprender R puede ser difícil y tomar tiempo en un principio, pero ¡no te
-preocupes, no estás sólo\! R cuenta con una amplia comunidad de usuarios
-dispuestos a ayudar a través de *mailing-lists* y *websites* como [Stack
-Overflow](https://stackoverflow.com/) y [RStudio
-community](https://community.rstudio.com/). Sin embargo, lo más probable
-es que tus dudas ya se encuentren resueltas en la web, asi que primero
-haz una búsqueda en **[Google](https://www.google.com)** usando palabras
-clave o **copia y pega en el buscador el mensaje de error** que te
-aparezca en la consola de R. **Consejo**: haz tus búsquedas y consultas
-en inglés, tendrás acceso a más y mejor información.
+Learning R can be difficult and can take time in the beginning but don't worry, you're not alone! R has a large community of users that are willing to help via *mailing-lists* and *websites* like [Stack
+Overflow](https://stackoverflow.com/) and [RStudio
+community](https://community.rstudio.com/). That being said, the most likely scenario is that your question is already answered and that the solution can be found via a **[Google](https://www.google.com)** search using keywords or by **copying the error message that appears in the R console and pasting this into the search box**.
 
 </div>
 
 <div id="conociendo-rstudio" class="section level2">
 
-## <span class="header-section-number">1.2</span> Conociendo RStudio
+## <span class="header-section-number">1.2</span> Getting to know RStudio
 
-¡Todo lo que necesitas en una ventana\! Como puedes ver en la imagen a
-continuación, RStudio se divide en 4 paneles principales:
+Everything you need in a window! As you can see in the image below, RStudio is divided into 4 main panels:
 
-1. Panel superior izquierdo: editor de texto para escribir
-   comandos/instrucciónes en R (R *script*), aquí puedes agregar
-   comentarios.
-2. Panel inferior izquierdo: consola de R, donde se ejecutan las líneas
-   de comando en tu *script*.
-3. Panel superior derecho: aquí puedes visualizar los datos presentes
-   en la memoria de R.
-4. Panel inferior derecho: aquí encuentras 5 pestañas
-   *Files/Plots/Packages/Help/Viewer* en las que puedes navegar por tus
-   archivos, visualizar tus gráficos en tiempo real, administrar
-   paquetes de R, y pedir ayuda.
+1. Upper left panel: text editor in which you can write commands/instructions (*R scripts*). You can also add comments here.
+2. Lower left panel: R console, this is where the lines of your script are executed.
+3. Upper right panel: Here you can visualize data currently loaded into the memory of R.
+4. Lower right panel: here you will encounter five tabs: *Files/Plots/Packages/Help/Viewer* in which you can navigate your file structure, view your figures in real time, manage your R packets, and ask for help.
 
-![RStudio](RStudio_overview.png) RStudio interfaz
+![RStudio](RStudio_overview.png) RStudio interface
 
 Básicamente, lo que haremos es escribir instrucciones (a lo que llamamos
 comandos) en el lenguaje de programación R, y luego le indicaremos al
