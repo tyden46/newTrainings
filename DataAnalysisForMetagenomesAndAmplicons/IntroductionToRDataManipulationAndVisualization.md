@@ -160,57 +160,37 @@ Everything you need in a window! As you can see in the image below, RStudio is d
 
 ![RStudio](RStudio_overview.png) RStudio interface
 
-Básicamente, lo que haremos es escribir instrucciones (a lo que llamamos
-comandos) en el lenguaje de programación R, y luego le indicaremos al
-computador que ejecute la instrucción (a lo que llamamos ejecutar o
-correr). En RStudio puedes escribir los comandos en el editor de texto y
-luego ejecutarlos, una línea de código a la vez, presionando `Ctrl` +
-`Enter` (`cmd` + `return` en Mac). Cuando ejecutas comandos, es
-importante poner atención a la consola. Si hubo algún problema con la
-ejecución de la instrucción, aparecerá un mensaje de error en la
-consola. Cuando el computador finaliza la instrucción, un nuevo `>`
-aparece en la consola indicando que a finalizado de ejecutar el último
-comando y está listo para correr el siguiente.
+Basically, what we will do is write instructions (which we will call commands) in the programming language R, and later we will indicate to the computer that it should execute the instruction (we will call this "running the code" or "executing the code"). In RStdio you can write the commands in the text editor and later execute them, one line of code at a time, pressing  `Ctrl` +`Enter` (`cmd` + `return` on a Mac). When you execute commands, it is important to pay attention to the console. If there is a problem with the execution of the instruction, an error message will occur in the console.When the computer is done executing the instruction, a new `>`will appear in the console indicating that it has finalized the execution of the last command and that it is ready to run the next command.
 
 </div>
 
 <div id="set-de-datos-para-trabajar" class="section level2">
 
-## <span class="header-section-number">1.3</span> Set de datos para trabajar
+## <span class="header-section-number">1.3</span> Data Set We'll Work With
 
-Para ésta sección vamos a trabajar con una tabla de datos que contiene
-información acerca de índices de diversidad de microorganismos presentes
-en 87 muestras de piel de 3 especies de ballena recolectadas en 3 zonas
-de Chile (*Megaptera novaeangliae*, *Balaenoptera musculus*,
-*Balaenoptera physalus*; Estrecho Magallanes, Chiloé, Reserva Nacional
-Pinguino de Humboldt).
+For this section we are going to work with a dataset that contains information about diversity indexes of microorganisms present in 87 skin samples of 3 whale species collected in 3 zones in Chile (*Megaptera novaeangliae*, *Balaenoptera musculus*,
+*Balaenoptera physalus*; Magellan Strait, Chiloé, Pinguino de Humboldt National Reserve).
 
-- Descarga la tabla de datos `IR_table1.csv`
-  [AQUÍ](https://www.dropbox.com/s/htbjbqsdrcinrcr/IR_table1.csv?dl=0).
+- Download the data table `IR_table1.csv`
+  [Here](https://www.dropbox.com/s/htbjbqsdrcinrcr/IR_table1.csv?dl=0).
 
-- Usa la función `read.table()` para leer o cargar la tabla de datos a
-  la memoria de **R**. La forma de cargar nuevos datos a la memoria de
-  R, es asignar dicho set de datos a un **objeto** usando `<-`
-  (**objeto \<- datos**).
+- Use the function `read.table()` to read or load the table into the memory of **R**. The way we load new data into the memory of R is to assign the data set to an **object** usando `<-` (**object** `<-` **data**).
 
 <div class="sourceCode">
 
 ```sourceCode
 data <- read.table(file = "~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv", sep = ",", header = TRUE)
-# usa la ruta correspondiente en tu computadora hasta el archivo 'IR_table1.csv'
-# ahora los datos se encuentran guardados en el objeto "data"
+# use the corresponding path in your computer to get to the file 'IR_table1.csv'
+# now the data can be found saved in the "data" object
 ```
 
 </div>
 
-`file = ""`, `sep = ""` y `header = TRUE/FALSE` son **argumentos** de la
-función `read.table`. Cada vez que llamamos una función debemos usar
-argumentos para indicar datos de entrada y/o preferencias:
+`file = ""`, `sep = ""` y `header = TRUE/FALSE` are **arguments** of the function `read.table`. Each time we call a function we will use arguments to indicate the data we want to feed into the function and/or the preferences we want when we use the function:
 
 - `file = "~/Dropbox/CastroLab_database/workshops_data/IR_table1.csv"`
-  para indicar archivo del cual queremos copiar datos y cargarlos a la
-  memoria de R.
-- `sep = ","` para indicar el separador de columnas de la tabla.
+  this indicates the file which we want to copy data from and which we want to load into the memory of R.
+- `sep = ","` this indicates the column separator symbol used in the table
 - `header = TRUE` para indicar que la tabla “IR\_table1.csv” sí
   (“TRUE”) contiene *headers* o títulos de columna, de lo
   contrario usaríamos “FALSE”.
